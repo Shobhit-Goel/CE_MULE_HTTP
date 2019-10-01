@@ -59,6 +59,37 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<muleVersion>3.8.1</muleVersion>
+					<deploymentType>cloudhub</deploymentType>
+					<applicationName>${artifactId}</applicationName>
+					<username>${user}</username>
+					<password>${password}</password>
+					<workerType>Micro</workerType>
+					<redeploy>true</redeploy>
+					<environment>Sandbox</environment>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -156,5 +187,6 @@
         </pluginRepository>
         
     </pluginRepositories>
+ 
 
 </project>
