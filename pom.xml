@@ -73,7 +73,7 @@
 				<configuration>
 					<muleVersion>3.8.1</muleVersion>
 					<deploymentType>cloudhub</deploymentType>
-					<applicationName>${artifactId}</applicationName>
+					<applicationName>newcehttp</applicationName>
 					<username>${user}</username>
 					<password>${password}</password>
 					<workerType>Micro</workerType>
